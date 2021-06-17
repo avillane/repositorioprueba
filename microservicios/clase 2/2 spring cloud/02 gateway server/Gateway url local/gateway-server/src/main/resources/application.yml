@@ -1,0 +1,22 @@
+server:
+  port: 8086
+  
+spring:
+  cloud:
+    gateway:
+
+      routes:
+        - id: product-ms
+          uri: http://localhost:8081/  #lb://product-ms
+          predicates:
+            - Path=/products/**
+        - id: customer-service
+          uri: http://localhost:8082/  #lb://customer-ms
+          predicates:
+            - Path=/customers/**
+        - id: shopping-ms
+          uri: http://localhost:8093/  #lb://product-ms
+          predicates:
+            - Path=/invoices/**
+  application:
+   name: gateway-ms
