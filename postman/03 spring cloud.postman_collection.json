@@ -1,0 +1,483 @@
+{
+	"info": {
+		"_postman_id": "a142db6c-9b10-4b92-808b-59467837ce79",
+		"name": "03 spring cloud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "3.1 config-server",
+			"item": [
+				{
+					"name": "config product-ms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8191/product-ms/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8191",
+							"path": [
+								"product-ms",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "config customer-ms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8191/customer-ms/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8191",
+							"path": [
+								"customer-ms",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "config shopping-ms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8191/shopping-ms/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8191",
+							"path": [
+								"shopping-ms",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products data_config logging",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://root:s3cr3t@localhost:8085/adfadfasf/default",
+							"protocol": "http",
+							"auth": {
+								"user": "root",
+								"password": "s3cr3t"
+							},
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"adfadfasf",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customers data_config logging",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://root:s3cr3t@localhost:8085/customers/default",
+							"protocol": "http",
+							"auth": {
+								"user": "root",
+								"password": "s3cr3t"
+							},
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"customers",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar facturas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8093/invoices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8093",
+							"path": [
+								"invoices"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3.2 gateway-server",
+			"item": [
+				{
+					"name": "listar productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8086/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8086",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8086/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8086",
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar facturas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8086/invoices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8086",
+							"path": [
+								"invoices"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3.3 registry server",
+			"item": [
+				{
+					"name": "products data_config  sin logging",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/registry-server/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"registry-server",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products data_config logging",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://root:s3cr3t@localhost:8085/products/default",
+							"protocol": "http",
+							"auth": {
+								"user": "root",
+								"password": "s3cr3t"
+							},
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"products",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customers data_config logging",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://root:s3cr3t@localhost:8085/customers/default",
+							"protocol": "http",
+							"auth": {
+								"user": "root",
+								"password": "s3cr3t"
+							},
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"customers",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3.4 feign-client",
+			"item": [
+				{
+					"name": "products data_config  sin logging",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/registry-server/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"registry-server",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products data_config logging",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://root:s3cr3t@localhost:8085/products/default",
+							"protocol": "http",
+							"auth": {
+								"user": "root",
+								"password": "s3cr3t"
+							},
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"products",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customers data_config logging",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://root:s3cr3t@localhost:8085/customers/default",
+							"protocol": "http",
+							"auth": {
+								"user": "root",
+								"password": "s3cr3t"
+							},
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"customers",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar facturas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8093/invoices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8093",
+							"path": [
+								"invoices"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

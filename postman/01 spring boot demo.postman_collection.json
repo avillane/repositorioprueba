@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "9452f07a-6b1f-44d8-bb83-82b3d0e3500c",
+		"name": "01 spring boot demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "saludar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/personas",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"personas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mensaje",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/personas/despedir",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"personas",
+						"despedir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/personas/listar",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"personas",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "greeting",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/greeting?name=jorge",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"greeting"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "jorge"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
