@@ -1,5 +1,6 @@
 package com.everis.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import lombok.AllArgsConstructor;
@@ -20,7 +21,25 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Product {
+
+@NamedNativeQueries({
+       @NamedNativeQuery(
+               name    =   "getAllProducts",
+               query   =   "SELECT tbl_products.id, tbl_products.name, description, stock, price, status, create_at,  tbl_categories.id as category_id, tbl_categories.name " +
+                           "FROM tbl_products,tbl_categories",
+                           resultClass=Product.class
+       ),
+       @NamedNativeQuery(
+               name    =   "getAllProductsByCategoriesId",
+               query   =   "SELECT tbl_products.id, tbl_products.name, description, stock, price, status, create_at,  tbl_categories.id as category_id, tbl_categories.name " +
+                           "FROM tbl_products, tbl_categories " + 
+                           "WHERE tbl_categories.id = ?",
+                           resultClass=Product.class
+       )
+})
+public class Product implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,4 +62,13 @@ public class Product {
 	@JoinColumn(name = "category_id")
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Category category;
+	
+	public Product(Long id, String name, String description, Double stock, Double price, String status) {
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.stock = stock; 
+		this.price = price;
+		this.status =status;
+	}
 }

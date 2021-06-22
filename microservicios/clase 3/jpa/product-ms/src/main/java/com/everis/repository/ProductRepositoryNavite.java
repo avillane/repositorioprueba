@@ -15,11 +15,17 @@ import org.springframework.stereotype.Repository;
 import com.everis.entity.Category;
 import com.everis.entity.Product;
 
-@Repository
-public interface ProductRepository  extends JpaRepository<Product, Long> {
+
+public interface ProductRepositoryNavite  {
+	public List<Product> findAll();
 	
-	//public List<Product> findByCategory(Category category);
+    public List<Product> getAllProducts();
     
+    public List<Product> getAllProductsByCategoriesId(Long id);
+    
+    public boolean addProduct(Product product);
+    
+	    
 	public List<Product> findByStatus(@Param("status") String status);
 	public List<Product> findByName(@Param("name") String name);
 	
@@ -39,9 +45,4 @@ public interface ProductRepository  extends JpaRepository<Product, Long> {
 	void insertUser(@Param("name") String name, @Param("description") String description, 
 	  @Param("stock") Double stock, @Param("price") Double price, @Param("status") String status);
 	
-	@Query(value="select * from tbl_products a where a.status= ?1", 
-            countQuery = "select count(id) from tbl_products a where a.status= ?1", 
-            nativeQuery = true)
-    Page<Product> getProductBySatus(String status, Pageable page);
-  
 }
