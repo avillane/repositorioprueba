@@ -22,6 +22,21 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @NoArgsConstructor
 @Builder
 
+@NamedNativeQueries({
+       @NamedNativeQuery(
+               name    =   "getAllProducts",
+               query   =   "SELECT tbl_products.id, tbl_products.name, description, stock, price, status, create_at,  tbl_categories.id as category_id, tbl_categories.name " +
+                           "FROM tbl_products,tbl_categories",
+                           resultClass=Product.class
+       ),
+       @NamedNativeQuery(
+               name    =   "getAllProductsByCategoriesId",
+               query   =   "SELECT tbl_products.id, tbl_products.name, description, stock, price, status, create_at,  tbl_categories.id as category_id, tbl_categories.name " +
+                           "FROM tbl_products, tbl_categories " + 
+                           "WHERE tbl_categories.id = ?",
+                           resultClass=Product.class
+       )
+})
 public class Product implements Serializable {
 
 	private static final long serialVersionUID = 1L;

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.everis.entity.Category;
 import com.everis.entity.Product;
 import com.everis.repository.ProductRepository;
+import com.everis.repository.ProductRepositoryNavite;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -16,10 +17,14 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
 	private ProductRepository productRepository;
     
-
+    @Autowired
+	private ProductRepositoryNavite productRepositoryNative;
+    
 	@Override
 	public List<Product> listAllProduct() {
-		return productRepository.findAll();
+		//return productRepository.findAll();
+		//return productRepositoryNative.findAll();
+		return productRepositoryNative.getAllProducts();
 	}
 
 	@Override
@@ -37,8 +42,8 @@ public class ProductServiceImpl implements ProductService {
 	public Product createProduct(Product product) {
 		product.setStatus("CREATED");
 		product.setCreateAt(new Date());
-		return productRepository.save(product);
-		//return productRepositoryNative.addProduct(product) ? product : null;
+		//return productRepository.save(product);
+		return productRepositoryNative.addProduct(product) ? product : null;
 	}
 
 	@Override
@@ -67,7 +72,8 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public List<Product> findByCategory(Category category) {
-		return productRepository.findByCategory(category);
+		//return null;//productRepository.findByCategory(category);
+		return productRepositoryNative.getAllProductsByCategoriesId(category.getId());
 	}
 
 	@Override
