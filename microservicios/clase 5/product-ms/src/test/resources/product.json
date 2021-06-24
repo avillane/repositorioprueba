@@ -1,0 +1,13 @@
+{
+        "id": 1,
+        "name": "adidas Cloudfoam Ultimate",
+        "description": "Walk in the air in the black / black CLOUDFOAM ULTIMATE running shoe from ADIDAS",
+        "stock": 5.0,
+        "price": 178.89,
+        "status": "CREATED",
+        "createAt": "2018-09-05T05:00:00.000+00:00",
+        "category": {
+            "id": 1,
+            "name": "shoes"
+        }
+}
